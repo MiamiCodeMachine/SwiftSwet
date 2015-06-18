@@ -10,6 +10,8 @@ import UIKit
 
 struct GlobalConstants {
     static let flickrKey = "ca07d4b08e6a3ee86cf6d9a0b8803204"
+    static let kNumberOfImages = 20
+
     //    println(GlobalConstants.flickrKey)
 }
 
@@ -20,11 +22,8 @@ class FlickrHelper: NSObject {
         let apiKey:String = GlobalConstants.flickrKey
         let search:String =  searchString.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         
-        let tmpurlForSearchString = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(apiKey)&text=\(search)&per_page=20&format=json&nojsoncallback=1"
-        // * cmd
-        println("tmpurlForSearchString =\(tmpurlForSearchString)")
 
-        return "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(apiKey)&text=\(search)&per_page=20&format=json&nojsoncallback=1"
+        return "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(apiKey)&text=\(search)&per_page=\(GlobalConstants.kNumberOfImages)&format=json&nojsoncallback=1"
     }
 
     class func URLForFlickrPhoto(photo:FlickrPhoto, size:String)->String {
@@ -33,9 +32,6 @@ class FlickrHelper: NSObject {
         if size.isEmpty{
             _size = "m"
         }
-        // * cmd
-        let urlForFlickrPhoto = "http://farm\(photo.farm).staticflickr.com/\(photo.server)/\(photo.photoID)_\(photo.secret)_\(_size).jpg"
-        println("urlForFlickrPhoto = \(urlForFlickrPhoto)")
         
         return
             "http://farm\(photo.farm).staticflickr.com/\(photo.server)/\(photo.photoID)_\(photo.secret)_\(_size).jpg"
@@ -66,7 +62,7 @@ class FlickrHelper: NSObject {
                         let error:NSError? = NSError(domain: "FlickrSearch", code: 0, userInfo: [NSLocalizedFailureReasonErrorKey:resultDict])
                     } else {
                         // * cmd
-//                        println(resultDict)
+                        println(resultDict)
                         let resultArray:NSArray =
                         resultDict.objectForKey("photos")?.objectForKey("photo") as! NSArray
                         

@@ -8,22 +8,18 @@
 
 import UIKit
 
+struct VCGlobalConstants {
+    static let kSearchTerm = "kate upton"
+    //    println(GlobalConstants.flickrKey)
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var imageViewer: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let flickr:FlickrHelper = FlickrHelper()
-
-        flickr.searchFlickrForString("world", completion: {(searchString:String!, flickrPhotos:NSMutableArray!, error:NSError!) ->()  in
-            let flickrPhoto:FlickrPhoto = flickrPhotos.objectAtIndex(0) as! FlickrPhoto
-            let image:UIImage = flickrPhoto.thumbnail
-            
-            self.imageViewer.image = image;
-            
-
-        })
+        self.imageViewer.backgroundColor = UIColor.brownColor()
 
     }
     override func didReceiveMemoryWarning() {
@@ -32,5 +28,21 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func loadImages(sender: AnyObject) {
+        
+        let flickr:FlickrHelper = FlickrHelper()
+        
+        flickr.searchFlickrForString(VCGlobalConstants.kSearchTerm, completion: {(searchString:String!, flickrPhotos:NSMutableArray!, error:NSError!) ->()  in
+            
+            let flickrPhoto:FlickrPhoto = flickrPhotos.objectAtIndex(Int(arc4random_uniform(UInt32(flickrPhotos.count)))) as! FlickrPhoto
+            let image:UIImage = flickrPhoto.thumbnail
+            dispatch_async(dispatch_get_main_queue(), {
+                self.imageViewer.image = image;
+                self.imageViewer.backgroundColor = UIColor.clearColor()
+                
+
+            })
+        })
+    }
 }
 

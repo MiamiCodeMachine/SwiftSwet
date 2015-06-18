@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		681CB1771B32FBFA00CD5B40 /* READ.ME in Resources */ = {isa = PBXBuildFile; fileRef = 681CB1761B32FBFA00CD5B40 /* READ.ME */; };
 		68368AF91B31BD3A00979231 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68368AF81B31BD3A00979231 /* AppDelegate.swift */; };
 		68368AFB1B31BD3A00979231 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68368AFA1B31BD3A00979231 /* ViewController.swift */; };
 		68368AFE1B31BD3A00979231 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68368AFC1B31BD3A00979231 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		681CB1761B32FBFA00CD5B40 /* READ.ME */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = READ.ME; sourceTree = "<group>"; };
 		68368AF31B31BD3A00979231 /* SwiftSweet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSweet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68368AF71B31BD3A00979231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68368AF81B31BD3A00979231 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				68368AFF1B31BD3A00979231 /* Images.xcassets */,
 				68368B011B31BD3A00979231 /* LaunchScreen.xib */,
 				68368AF61B31BD3A00979231 /* Supporting Files */,
+				681CB1761B32FBFA00CD5B40 /* READ.ME */,
 			);
 			path = SwiftSweet;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				68368AFE1B31BD3A00979231 /* Main.storyboard in Resources */,
 				68368B031B31BD3A00979231 /* LaunchScreen.xib in Resources */,
 				68368B001B31BD3A00979231 /* Images.xcassets in Resources */,
+				681CB1771B32FBFA00CD5B40 /* READ.ME in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +423,7 @@
 				68368B141B31BD3A00979231 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68368B151B31BD3A00979231 /* Build configuration list for PBXNativeTarget "SwiftSweetTests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +432,7 @@
 				68368B171B31BD3A00979231 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
