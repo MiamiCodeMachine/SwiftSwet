@@ -9,7 +9,7 @@
 import UIKit
 
 struct VCGlobalConstants {
-    static let kSearchTerm = "kate upton"
+    static let kSearchTerm = "nicola tesla"
     //    println(GlobalConstants.flickrKey)
 }
 
@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.imageViewer.backgroundColor = UIColor.brownColor()
+        self.imageViewer.backgroundColor = UIColor.lightGrayColor()
 
     }
     override func didReceiveMemoryWarning() {

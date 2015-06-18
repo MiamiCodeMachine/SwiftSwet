@@ -16,11 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uiX-pb-OWS">
-                                <rect key="frame" x="16" y="20" width="216" height="203"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHq-JV-Hqv">
-                                <rect key="frame" x="16" y="231" width="180" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHq-JV-Hqv">
+                                <rect key="frame" x="86" y="550" width="430" height="30"/>
                                 <state key="normal" title="search for image">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -29,8 +26,29 @@
                                     <action selector="loadImages:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HBB-ir-wxv"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uiX-pb-OWS">
+                                <rect key="frame" x="25" y="30" width="550" height="277"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="kHq-JV-Hqv" secondAttribute="centerX" id="16R-ZP-GGe"/>
+                            <constraint firstItem="uiX-pb-OWS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="1ky-iW-GAE"/>
+                            <constraint firstItem="kHq-JV-Hqv" firstAttribute="top" secondItem="uiX-pb-OWS" secondAttribute="bottom" constant="243" id="3Zj-cn-gjG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kHq-JV-Hqv" secondAttribute="bottom" constant="20" id="3c4-az-dSs"/>
+                            <constraint firstItem="uiX-pb-OWS" firstAttribute="width" secondItem="kHq-JV-Hqv" secondAttribute="width" id="7Bb-jh-Ikp"/>
+                            <constraint firstAttribute="trailing" secondItem="kHq-JV-Hqv" secondAttribute="trailing" constant="144" id="PqU-cV-ey5"/>
+                            <constraint firstItem="uiX-pb-OWS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="Tod-zC-kLJ"/>
+                            <constraint firstAttribute="trailing" secondItem="uiX-pb-OWS" secondAttribute="trailing" constant="25" id="bGz-2N-kuH"/>
+                            <constraint firstItem="kHq-JV-Hqv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="145" id="bo7-5L-ZbK"/>
+                            <constraint firstAttribute="centerX" secondItem="uiX-pb-OWS" secondAttribute="centerX" id="y7n-Rm-B1o"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="PqU-cV-ey5"/>
+                                <exclude reference="bo7-5L-ZbK"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="imageViewer" destination="uiX-pb-OWS" id="Bnn-Kj-51g"/>
